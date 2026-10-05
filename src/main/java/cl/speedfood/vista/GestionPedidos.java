@@ -399,6 +399,18 @@ public class GestionPedidos extends JFrame {
             return;
         }
 
+        if (direccion.length() > 100) {
+
+            JOptionPane.showMessageDialog(
+                    this,
+                    "La dirección no puede superar los 100 caracteres.",
+                    "Validación",
+                    JOptionPane.WARNING_MESSAGE
+            );
+
+            return;
+        }
+
         TipoPedido tipo = (TipoPedido) cmbTipo.getSelectedItem();
         EstadoPedido estado = (EstadoPedido) cmbEstado.getSelectedItem();
 
@@ -455,6 +467,18 @@ public class GestionPedidos extends JFrame {
             JOptionPane.showMessageDialog(
                     this,
                     "Debe ingresar una dirección.",
+                    "Validación",
+                    JOptionPane.WARNING_MESSAGE
+            );
+
+            return;
+        }
+
+        if (direccion.length() > 100) {
+
+            JOptionPane.showMessageDialog(
+                    this,
+                    "La dirección no puede superar los 100 caracteres.",
                     "Validación",
                     JOptionPane.WARNING_MESSAGE
             );

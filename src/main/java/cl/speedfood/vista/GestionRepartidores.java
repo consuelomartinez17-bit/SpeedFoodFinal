@@ -267,6 +267,18 @@ public class GestionRepartidores extends JFrame {
             return;
         }
 
+        if (nombre.length() > 100) {
+
+            JOptionPane.showMessageDialog(
+                    this,
+                    "El nombre no puede superar los 100 caracteres.",
+                    "Validación",
+                    JOptionPane.WARNING_MESSAGE
+            );
+
+            return;
+        }
+
         try {
 
             repartidorDAO.create(new Repartidor(nombre));
@@ -314,6 +326,18 @@ public class GestionRepartidores extends JFrame {
             JOptionPane.showMessageDialog(
                     this,
                     "Debe ingresar un nombre.",
+                    "Validación",
+                    JOptionPane.WARNING_MESSAGE
+            );
+
+            return;
+        }
+
+        if (nombre.length() > 100) {
+
+            JOptionPane.showMessageDialog(
+                    this,
+                    "El nombre no puede superar los 100 caracteres.",
                     "Validación",
                     JOptionPane.WARNING_MESSAGE
             );

@@ -244,14 +244,17 @@ public class GestionEntregas extends JFrame {
         JButton btnAgregar = new JButton("Agregar");
         JButton btnEditar = new JButton("Editar");
         JButton btnEliminar = new JButton("Eliminar");
+        JButton btnActualizar = new JButton("Actualizar");
 
         configurarBoton(btnAgregar);
         configurarBoton(btnEditar);
         configurarBoton(btnEliminar);
+        configurarBoton(btnActualizar);
 
         panelBotones.add(btnAgregar);
         panelBotones.add(btnEditar);
         panelBotones.add(btnEliminar);
+        panelBotones.add(btnActualizar);
 
         panelFormulario.add(
                 panelDatos,
@@ -377,6 +380,13 @@ public class GestionEntregas extends JFrame {
 
         btnEliminar.addActionListener(
                 e -> eliminarEntrega()
+        );
+
+        btnActualizar.addActionListener(
+                e -> {
+                    cargarCombos();
+                    cargarEntregas();
+                }
         );
 
         tablaEntregas.getSelectionModel()
